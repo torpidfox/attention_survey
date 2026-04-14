@@ -52,8 +52,9 @@
       flex-direction: column !important;
       align-items: flex-start !important;
       width: 100% !important;
-      gap: 2px !important;
-      padding-top: 20px !important;
+      gap: 8px !important; /* Увеличили с 2px до 8px, чтобы строки не слипались */
+      padding: 10px 0 !important; /* Добавили внутренний отступ сверху и снизу */
+      overflow: visible !important; /* Гарантируем, что текст не режется */
     }
     .jspsych-survey-likert-opts li {
       width: 100% !important;
