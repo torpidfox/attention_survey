@@ -48,6 +48,33 @@
     .page .note { font-size: 14px; color: #888; font-family: 'DM Mono', monospace; }
 
     /* Survey styling overrides */
+    .jspsych-survey-likert-opts {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+      gap: 2px !important;
+    }
+    .jspsych-survey-likert-opts li {
+      width: 100% !important;
+      text-align: left !important;
+      padding: 6px 12px !important;
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .jspsych-survey-likert-opts li:hover {
+      background: rgba(0,0,0,0.03);
+    }
+    .jspsych-survey-likert-opt-label {
+      font-size: 14px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      cursor: pointer;
+    }
+    .jspsych-survey-likert-opt-label input[type="radio"] {
+      margin: 0 !important;
+      flex-shrink: 0;
+    }
     .jspsych-survey-likert-statement { 
       font-size: 16px !important; 
       margin-bottom: 4px !important;
