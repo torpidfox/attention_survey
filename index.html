@@ -201,8 +201,12 @@ var jsPsychCircleRotation = (function () {
         draw();
       }
 
+      var ended = false;
       function end() {
+        if (ended) return;
+        ended = true;
         clearInterval(iv);
+        clearTimeout(safetyTimeout);
         self.jsPsych.finishTrial({ rounds_completed: rounds, total_clicks: clicks, total_time_ms: Math.round(performance.now()-start), round_timestamps_ms: JSON.stringify(rts) });
       }
 
@@ -212,7 +216,7 @@ var jsPsychCircleRotation = (function () {
         if (tb) tb.style.width = ((r/trial.task_duration_ms)*100)+'%';
         if (r <= 0) end();
       }, 1000);
-      setTimeout(function(){ end(); }, trial.task_duration_ms + 500);
+      var safetyTimeout = setTimeout(function(){ end(); }, trial.task_duration_ms + 500);
       draw();
     }
   }
